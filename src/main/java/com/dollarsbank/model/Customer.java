@@ -51,11 +51,18 @@ public class Customer {
 		this.number = number;
 	}
 	
+	public List<Account> getAccounts() {
+		return accounts;
+	}
+
+	public void setAccounts(List<Account> accounts) {
+		this.accounts = accounts;
+	}
+
 	//User as print customer information.
 	@Override
 	public String toString() {
-		return "Customer [userId=" + userId + ", name=" + name + ", address=" + address + ", number=" + number
-				+ ", accounts=" + accounts + "]";
+		return "Customer [userId=" + userId + ", name=" + name + ", address=" + address + ", number=" + number + "]";
 	}
 	
 	

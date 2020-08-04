@@ -4,8 +4,12 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
 
-public class Account extends Customer {
+import com.dollarsbank.application.Menu;
+import com.dollarsbank.utility.ColorsUtility;
 
+public class Account extends Customer {
+	
+	Menu menu = new Menu();
 	//linked by UserId
 	//private String acctId
 	//private String acctType
@@ -13,9 +17,8 @@ public class Account extends Customer {
 	private String password;
 	private List<Transaction> transactions;
 
-	public Account() {
-		// TODO Auto-generated constructor stub
-	}
+
+	public Account(){}
 
 	public Account(String userId, String password) {
 		super();
@@ -67,20 +70,19 @@ public class Account extends Customer {
 		this.transactions = transactions;
 	}
 
-	public void withdraw(double userAmount) {
-		
-		Scanner input = new Scanner(System.in); 
-		
-		System.out.println("Enter the amount to deposit from account:");
-		
+	public void withdraw() {
+		Scanner input = new Scanner(System.in);
+		double userAmount = 0;
+		System.out.println("Enter amount to withdraw");
 		//input
-		input.nextDouble();
+		userAmount = input.nextDouble();
 		input.close();
+		
 		
 		double total = this.balance - userAmount;
 		
-		if(total < 0 ) {
-			System.out.println("You can't withdraw that much from your account. Insufficient funds");
+		if(total < 0) {
+			System.out.println("You can't withdraw that much from your account with "+ userAmount + " Insufficient funds");
 		} 
 		else{
 			this.setBalance(total);
@@ -89,20 +91,29 @@ public class Account extends Customer {
 			transactions.add(transaction);
 		}
 	}
-	public void deposit(double userAmount) {
-			this.balance = this.balance + userAmount;
-			LocalDateTime currenttimedate = LocalDateTime.now();
-			Transaction transaction = new Transaction(userAmount, currenttimedate, Type.DEPOSIT);
-			transactions.add(transaction);
+	public void deposit() {
+		
+		Scanner input = new Scanner(System.in);
+		double userAmount = 0;
+		System.out.println("Enter amount to deposit");
+		userAmount = input.nextDouble();
+		input.close();			
+			
+		double total = this.balance + userAmount;
+		LocalDateTime currenttimedate = LocalDateTime.now();
+		Transaction transaction = new Transaction(userAmount, currenttimedate, Type.DEPOSIT);
+		transactions.add(transaction);
+			
 	}
 	
 	
-	/**Transfer funds from one account to the another
-	 * */
-	public void transferFunds(Account Receiver) {
-		/*How much would you like to transfer.
-		 * */
-		
+	
+	
+	public void viewTransactions() {
+		for(Transaction t: transactions)
+		{
+			System.out.println(t);
+		}
 		
 	}
 
@@ -111,5 +122,7 @@ public class Account extends Customer {
 		return "Account [balance = " + balance + ", password = " + password + ", userId = " + userId + ", name = " + name
 				+ ", address = " + address + ", number = " + number + "]";
 	}
+	
+	
 	
 }

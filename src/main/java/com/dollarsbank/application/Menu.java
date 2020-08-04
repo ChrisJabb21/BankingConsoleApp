@@ -11,7 +11,7 @@ public class Menu {
 
 	Scanner scan = new Scanner(System.in);
 
-	public void StartMenu() throws InputMismatchException {
+	public void startMenu() throws InputMismatchException {
 	
 
 			System.out.println(
@@ -37,14 +37,14 @@ public class Menu {
 				break;
 			default:
 				System.out.println("Invalid input. Enter a number from below.");
-				StartMenu();
+				startMenu();
 				break;
 				}
 			}
 		catch(InputMismatchException e) {
 	System.out.println("Invalid Input");
 	scan.nextLine();
-	StartMenu();
+	startMenu();
 
 		}
 	}

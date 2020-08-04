@@ -10,21 +10,18 @@ public class App
 		 * try {
 		 */Menu menu = new Menu();
         ConsolePrinterUtility.printWelcome();
-        menu.StartMenu();
+        menu.startMenu();
     	/*} catch (Exception e) {
     		e.printStackTrace();
     	}*/
     }
 }    
-    /* Prompt a menu for user login system
-     * Ask user to login
-     * 
+    /* 
      * if user info correct
      * 	sign
      * else if incorrect input
      *  say invalid and try again.
-     * 
-     * */
+     *  */
     
     /*
      * Let user

@@ -1,8 +1,5 @@
 package com.dollarsbank.utility;
 
-import com.dollarsbank.application.Menu;
-import java.lang.System;
-
 /**
  * A class for holding all print console output methods 
  * @author chris
@@ -15,7 +12,7 @@ public class ConsolePrinterUtility {
 	//all the banners for each menu view and multicolor settings
 	
 	 public static void printWelcome() {
-	 java.lang.System.out.println(ColorsUtility.BLUE +
+	 System.out.println(ColorsUtility.BLUE +
 				"+------------------------+\r\n" + 
 				"|DOLLARBANK welcomes you!|\r\n" + 
 				"+------------------------+" + ColorsUtility.RESET);

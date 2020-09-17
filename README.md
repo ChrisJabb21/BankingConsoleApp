@@ -1,7 +1,6 @@
 ## Project Overview
 Program for a Banking application in Java based on 
-following specifications and objectives and one week timeframe.
-First version started as a console application. (WIP and refactoring)
+following specifications and objectives and one week timeframe as a console application.
 
 Layered (n-tiered) architecture
 
